@@ -1,0 +1,14 @@
+# IDEA ###
+.idea
+
+# MacOS ###
+.DS_Store
+
+# VS Code ###
+.vscode/
+
+# local test
+./mytest
+
+# local runtime
+./runtime

@@ -1,0 +1,25 @@
+server:
+  port: 8000
+
+app:
+  runtimeRootPath: runtime/
+
+log:
+  logSavePath: logs/
+  logSaveName: log
+  logFileExt: log
+  timeFormat: 20060102
+
+mysql:
+  username: root
+  password: 123456
+  url: tcp(localhost:3306)/chat?charset=utf8&parseTime=True&loc=Local
+
+redis:
+  host: 127.0.0.1:6379
+  password: 123456
+
+jwt:
+  secretKey: jkfsunl79
+
+

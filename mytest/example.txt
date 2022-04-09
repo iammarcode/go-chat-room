@@ -1,0 +1,6 @@
+Appending some text to example.txt
+9089898
+Appending some text to example.txt
+9089898
+Appending some text to example.txt
+9089898

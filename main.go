@@ -8,6 +8,8 @@ import (
 func init() {
 	initialize.LoadConfig("./")
 	initialize.Logging()
+	initialize.Mysql()
+	initialize.Redis()
 
 }
 

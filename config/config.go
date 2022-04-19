@@ -20,17 +20,17 @@ type Server struct {
 }
 
 type Mysql struct {
+	Host     string `mapstructure:"host"`
+	Port     string `mapstructure:"port"`
 	Username string `mapstructure:"username"`
 	Password string `mapstructure:"password"`
-	Host     string `mapstructure:"host"`
+	DbName   string `mapstructure:"dbName"`
 }
 
 type Redis struct {
-	Username    string `mapstructure:"username"`
-	Password    string `mapstructure:"password"`
-	MaxIdle     string `mapstructure:"maxIdle"`
-	MaxActive   string `mapstructure:"maxActive"`
-	IdleTimeout string `mapstructure:"idleTimeout"`
+	Host     string `mapstructure:"host"`
+	Port     string `mapstructure:"port"`
+	Password string `mapstructure:"password"`
 }
 
 type Jwt struct {

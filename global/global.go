@@ -9,5 +9,5 @@ import (
 var (
 	Config config.Config
 	Db     *gorm.DB
-	Cache  *redis.Client
+	RedisClient  *redis.Client
 )

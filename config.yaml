@@ -13,17 +13,16 @@ log:
   timeFormat: 20060102
 
 mysql:
+  host: 127.0.0.1
+  port: 3360
   username: root
   password: 123456
-  host: 127.0.0.1:3360
   dbName: chat_room
 
 redis:
-  host: 127.0.0.1:6379
+  host: 127.0.0.1
+  port: 6379
   password: 123456
-  maxIdle: 30
-  maxActive: 30
-  idleTimeout: 100
 
 jwt:
   secretKey: jkfsunl79

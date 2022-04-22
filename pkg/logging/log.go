@@ -29,27 +29,27 @@ const (
 	FATAL
 )
 
-func Debug(v ...interface{}) {
+func Debug( v ...interface{}) {
 	setPrefix(DEBUG)
 	Logger.Println(v)
 }
 
-func Info(v ...interface{}) {
+func Info( v ...interface{}) {
 	setPrefix(INFO)
 	Logger.Println(v)
 }
 
-func Warn(v ...interface{}) {
+func Warn( v ...interface{}) {
 	setPrefix(WARNING)
 	Logger.Println(v)
 }
 
-func Error(v ...interface{}) {
+func Error( v ...interface{}) {
 	setPrefix(ERROR)
 	Logger.Println(v)
 }
 
-func Fatal(v ...interface{}) {
+func Fatal( v ...interface{}) {
 	setPrefix(FATAL)
 	Logger.Fatalln(v)
 }
@@ -57,7 +57,7 @@ func Fatal(v ...interface{}) {
 func setPrefix(level Level) {
 	_, file, line, ok := runtime.Caller(DefaultCallerDepth)
 	if ok {
-		logPrefix = fmt.Sprintf("[%s][%s:%d]", levelFlags[level], filepath.Base(file), line)
+		logPrefix = fmt.Sprintf("[%s][%s:%d]", levelFlags[level], filepath.Join(filepath.Dir(file), filepath.Base(file)), line)
 	} else {
 		logPrefix = fmt.Sprintf("[%s]", levelFlags[level])
 	}

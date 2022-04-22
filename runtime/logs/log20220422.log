@@ -1,0 +1,58 @@
+[INFO][main.go:18]2022/04/22 11:06:34 [test ar...]
+[ERROR][router.go:20]2022/04/22 11:27:36 [endpoint %v %v %v %v
+ POST /v1/register github.com/whoismarcode/go-chat-room/api/v1.Register 3]
+[ERROR][router.go:20]2022/04/22 11:27:36 [endpoint %v %v %v %v
+ POST /v1/login github.com/whoismarcode/go-chat-room/api/v1.Login 3]
+[ERROR][router.go:20]2022/04/22 11:27:36 [endpoint %v %v %v %v
+ POST /v1/refreshToken github.com/whoismarcode/go-chat-room/api/v1.RefreshToken 4]
+[ERROR][router.go:20]2022/04/22 11:27:36 [endpoint %v %v %v %v
+ GET /v1/users github.com/whoismarcode/go-chat-room/api/v1.UserList 4]
+[DEBUG][router.go:20]2022/04/22 11:29:26 [endpoint POST /v1/register github.com/whoismarcode/go-chat-room/api/v1.Register 3
+]
+[DEBUG][router.go:20]2022/04/22 11:29:26 [endpoint POST /v1/login github.com/whoismarcode/go-chat-room/api/v1.Login 3
+]
+[DEBUG][router.go:20]2022/04/22 11:29:26 [endpoint POST /v1/refreshToken github.com/whoismarcode/go-chat-room/api/v1.RefreshToken 4
+]
+[DEBUG][router.go:20]2022/04/22 11:29:26 [endpoint GET /v1/users github.com/whoismarcode/go-chat-room/api/v1.UserList 4
+]
+[DEBUG][router.go:20]2022/04/22 11:31:48 [access POST /v1/register github.com/whoismarcode/go-chat-room/api/v1.Register 2
+]
+[DEBUG][router.go:20]2022/04/22 11:31:48 [access POST /v1/login github.com/whoismarcode/go-chat-room/api/v1.Login 2
+]
+[DEBUG][router.go:20]2022/04/22 11:31:48 [access POST /v1/refreshToken github.com/whoismarcode/go-chat-room/api/v1.RefreshToken 3
+]
+[DEBUG][router.go:20]2022/04/22 11:31:48 [access GET /v1/users github.com/whoismarcode/go-chat-room/api/v1.UserList 3
+]
+[ERROR][user.go:44]2022/04/22 11:55:27 [invalid character '}' looking for beginning of object key string]
+[ERROR][user.go:57]2022/04/22 11:55:27 [Error 1292: Incorrect datetime value: '' for column 'modified_at' at row 1]
+[ERROR][user.go:44]2022/04/22 11:56:58 [json: cannot unmarshal number into Go struct field RegisterRequest.password of type string]
+[ERROR][user.go:57]2022/04/22 11:56:58 [Error 1292: Incorrect datetime value: '' for column 'modified_at' at row 1]
+[ERROR][user.go:44]2022/04/22 11:58:18 [json: cannot unmarshal number into Go struct field RegisterRequest.password of type string]
+[ERROR][user.go:44]2022/04/22 11:59:35 [json: cannot unmarshal number into Go struct field RegisterRequest.password of type string]
+[ERROR][user.go:58]2022/04/22 12:01:18 [Error 1292: Incorrect datetime value: '' for column 'modified_at' at row 1]
+[ERROR][user.go:23]2022/04/22 12:22:46 [Error 1292: Incorrect datetime value: '' for column 'modified_at' at row 1]
+[ERROR][C:\Users\cendo\Desktop\marco\go\go-chat-room\models:23]2022/04/22 14:16:18 [Error 1292: Incorrect datetime value: '' for column 'modified_at' at row 1]
+[ERROR][C:\Users\cendo\Desktop\marco\go\go-chat-room\models\user.go:23]2022/04/22 14:20:51 [Error 1292: Incorrect datetime value: '' for column 'modified_at' at row 1]
+[DEBUG][C:\Users\cendo\Desktop\marco\go\go-chat-room\initializer\router.go:20]2022/04/22 14:25:56 [access POST /v1/register github.com/whoismarcode/go-chat-room/api/v1.Register 3
+]
+[DEBUG][C:\Users\cendo\Desktop\marco\go\go-chat-room\initializer\router.go:20]2022/04/22 14:25:56 [access POST /v1/login github.com/whoismarcode/go-chat-room/api/v1.Login 3
+]
+[DEBUG][C:\Users\cendo\Desktop\marco\go\go-chat-room\initializer\router.go:20]2022/04/22 14:25:56 [access POST /v1/refreshToken github.com/whoismarcode/go-chat-room/api/v1.RefreshToken 4
+]
+[DEBUG][C:\Users\cendo\Desktop\marco\go\go-chat-room\initializer\router.go:20]2022/04/22 14:25:56 [access GET /v1/users github.com/whoismarcode/go-chat-room/api/v1.UserList 4
+]
+[ERROR][C:\Users\cendo\Desktop\marco\go\go-chat-room\models\user.go:23]2022/04/22 14:26:00 [Error 1292: Incorrect datetime value: '' for column 'modified_at' at row 1]
+[ERROR][C:\Users\cendo\Desktop\marco\go\go-chat-room\models\user.go:22]2022/04/22 15:15:19 [Error 1292: Incorrect datetime value: '' for column 'created_at' at row 1]
+[ERROR][C:\Users\cendo\Desktop\marco\go\go-chat-room\models\user.go:22]2022/04/22 15:17:50 [Error 1048: Column 'created_at' cannot be null]
+[ERROR][C:\Users\cendo\Desktop\marco\go\go-chat-room\models\user.go:22]2022/04/22 15:19:28 [Error 1048: Column 'created_at' cannot be null]
+[ERROR][C:\Users\cendo\Desktop\marco\go\go-chat-room\models\user.go:22]2022/04/22 15:21:14 [Error 1048: Column 'created_at' cannot be null]
+[ERROR][C:\Users\cendo\Desktop\marco\go\go-chat-room\models\user.go:22]2022/04/22 15:21:18 [Error 1048: Column 'created_at' cannot be null]
+[ERROR][C:\Users\cendo\Desktop\marco\go\go-chat-room\models\user.go:22]2022/04/22 15:24:19 [Error 1048: Column 'created_at' cannot be null]
+[ERROR][C:\Users\cendo\Desktop\marco\go\go-chat-room\models\user.go:22]2022/04/22 15:24:59 [Error 1292: Incorrect datetime value: '' for column 'created_at' at row 1]
+[ERROR][C:\Users\cendo\Desktop\marco\go\go-chat-room\models\model.go:23]2022/04/22 15:27:35 [unsupported data type: map[created_at:2022-04-22 15:27:35]: Table not set, please set it like: db.Model(&user) or db.Table("users")]
+[ERROR][C:\Users\cendo\Desktop\marco\go\go-chat-room\models\user.go:22]2022/04/22 15:27:35 [unsupported data type: map[created_at:2022-04-22 15:27:35]: Table not set, please set it like: db.Model(&user) or db.Table("users")]
+[ERROR][C:\Users\cendo\Desktop\marco\go\go-chat-room\models\model.go:24]2022/04/22 15:29:46 [WHERE conditions required]
+[ERROR][C:\Users\cendo\Desktop\marco\go\go-chat-room\models\user.go:22]2022/04/22 15:29:46 [WHERE conditions required]
+[ERROR][C:\Users\cendo\Desktop\marco\go\go-chat-room\models\user.go:22]2022/04/22 15:54:32 [Error 1048: Column 'created_at' cannot be null]
+[ERROR][C:\Users\cendo\Desktop\marco\go\go-chat-room\models\user.go:94]2022/04/22 16:33:46 [user not found]
+[ERROR][C:\Users\cendo\Desktop\marco\go\go-chat-room\models\user.go:91]2022/04/22 23:19:42 [user not found]

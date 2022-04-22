@@ -16,6 +16,7 @@ type App struct {
 }
 
 type Server struct {
+	Host string `mapstructure:"host"`
 	Port string `mapstructure:"port"`
 }
 
@@ -34,7 +35,9 @@ type Redis struct {
 }
 
 type Jwt struct {
-	SecretKey string `mapstructure:"secretKey"`
+	SecretKey  string `mapstructure:"secretKey"`
+	Expiration int64 `mapstructure:"expiration"`
+	Issuer     string `mapstructure:"issuer"`
 }
 
 type Log struct {

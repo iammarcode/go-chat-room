@@ -1,4 +1,4 @@
-package initialize
+package initializer
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 	"github.com/whoismarcode/go-chat-room/global"
 )
 
-func LoadConfig(path string) {
+func Config(path string) {
 	viper.AddConfigPath(path)
 	viper.SetConfigName("config")
 	viper.SetConfigType("yaml")

@@ -2,7 +2,8 @@ package jwt
 
 import (
 	"github.com/gin-gonic/gin"
-	util2 "github.com/whoismarcode/go-chat-room/pkg/util"
+	"github.com/whoismarcode/go-chat-room/pkg/logging"
+	"github.com/whoismarcode/go-chat-room/pkg/util"
 	"github.com/whoismarcode/go-chat-room/response"
 )
 
@@ -11,11 +12,13 @@ func JwtAuth() gin.HandlerFunc {
 		token := c.Request.Header.Get("token")
 		if token == "" {
 			response.Failed("token required", c)
+			logging.Error("token required")
 			c.Abort()
 			return
 		}
-		if _, err := util2.VerifyToken(token); err != nil {
+		if _, err := util.VerifyToken(token); err != nil {
 			response.Failed("unauthorized", c)
+			logging.Error("invalid token err: ", err)
 			c.Abort()
 			return
 		}

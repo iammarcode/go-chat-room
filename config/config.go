@@ -36,7 +36,7 @@ type Redis struct {
 
 type Jwt struct {
 	SecretKey  string `mapstructure:"secretKey"`
-	Expiration int64 `mapstructure:"expiration"`
+	Expiration int `mapstructure:"expiration"`
 	Issuer     string `mapstructure:"issuer"`
 }
 

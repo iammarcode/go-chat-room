@@ -65,19 +65,33 @@ func (u UserService) Login() (bool, error) {
 
 func (u UserService) UserList() (*[]models.User, error) {
 	var userList *[]models.User
-	data, err := cache.Get("userList")
+	data, err := cache.Get(cache.KeyUserList)
 	if err != nil {
+		logging.Error(err)
 		// query from db
 		user := models.User{}
 		userList, err = user.GetAll()
 		if err != nil {
+			logging.Error(err)
 			return nil, err
 		} else {
+			// store in redis
+			dataByte, err := json.Marshal(userList)
+			if err != nil {
+				logging.Error(err)
+			} else {
+				err = cache.Set(cache.KeyUserList, dataByte, cache.DefaultExpiration)
+				if err != nil {
+					logging.Error(err)
+				}
+			}
+
 			return userList, nil
 		}
 	}
 
 	// query from cache
+	logging.Info("get from cache, key: ", cache.KeyUserList)
 	err = json.Unmarshal([]byte(data), &userList)
 	if err != nil {
 		logging.Error(err)

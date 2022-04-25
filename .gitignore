@@ -8,7 +8,7 @@
 .vscode/
 
 # local test
-./mytest/
+mytest/
 
 # local runtime
-./runtime/
+runtime/

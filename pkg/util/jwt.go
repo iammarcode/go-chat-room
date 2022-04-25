@@ -4,6 +4,7 @@ import (
 	"github.com/golang-jwt/jwt"
 	"github.com/whoismarcode/go-chat-room/global"
 	"github.com/whoismarcode/go-chat-room/pkg/logging"
+	"time"
 )
 
 type MyClaims struct {
@@ -14,13 +15,14 @@ type MyClaims struct {
 
 func GenerateToken(username, password string) (string, error) {
 	secretKey := []byte(global.Config.Jwt.SecretKey)
+	expiration := time.Now().Add(time.Minute * 10).Unix()
 
 	// Create the Claims
 	claims := MyClaims{
 		username, //TODO: encode
 		password,
 		jwt.StandardClaims{
-			ExpiresAt: global.Config.Jwt.Expiration,
+			ExpiresAt: expiration,
 			Issuer:    global.Config.Jwt.Issuer,
 		},
 	}

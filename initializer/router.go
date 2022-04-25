@@ -8,15 +8,17 @@ import (
 	"github.com/whoismarcode/go-chat-room/pkg/jwt"
 )
 
+var R *gin.Engine
+
 func Router() {
 	// Logging to a file.
 	//f, _ := os.Create("gin.log")
 	//gin.DefaultWriter = io.MultiWriter(f)
 
-	router := gin.New()
+	R = gin.New()
 
 	// TODO: beautify gin.Logger() format
-	router.Use(gin.LoggerWithFormatter(func(param gin.LogFormatterParams) string {
+	R.Use(gin.LoggerWithFormatter(func(param gin.LogFormatterParams) string {
 
 		// your custom format
 		return fmt.Sprintf("%s - [%s] \"%s %s %s %d %s \"%s\" %s\"\n",
@@ -33,13 +35,13 @@ func Router() {
 	}))
 
 	// By default gin.DefaultWriter = os.Stdout
-	//router.Use(gin.Logger())
+	//R.Use(gin.Logger())
 
 
 	// Recovery middleware recovers from any panics and writes a 500 if there was one.
-	router.Use(gin.Recovery())
+	R.Use(gin.Recovery())
 
-	apiV1 := router.Group("/v1")
+	apiV1 := R.Group("/v1")
 
 	// unauthorized
 	apiV1.POST("/register", v1.Register)
@@ -52,5 +54,5 @@ func Router() {
 		apiV1.GET("/users", v1.UserList)
 	}
 
-	router.Run(fmt.Sprintf("%s:%s", global.Config.Server.Host, global.Config.Server.Port))
+	R.Run(fmt.Sprintf("%s:%s", global.Config.Server.Host, global.Config.Server.Port))
 }

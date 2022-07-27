@@ -12,7 +12,7 @@ type Response struct {
 }
 
 func Success(message string, data interface{}, c *gin.Context) {
-	c.JSON(http.StatusOK, Response{200, message, data})
+	return c.JSON(http.StatusOK, Response{200, message, data})
 }
 
 func Failed(message string, c *gin.Context) {

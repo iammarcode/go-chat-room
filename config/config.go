@@ -6,6 +6,7 @@ type Config struct {
 	Mysql  Mysql  `mapstructure:"mysql"`
 	Redis  Redis  `mapstructure:"redis"`
 	Jwt    Jwt    `mapstructure:"jwt"`
+	Mq     Mq     `mapstructure:"mq"`
 	Log    Log    `mapstructure:"log"`
 }
 
@@ -36,8 +37,15 @@ type Redis struct {
 
 type Jwt struct {
 	SecretKey  string `mapstructure:"secretKey"`
-	Expiration int `mapstructure:"expiration"`
+	Expiration int    `mapstructure:"expiration"`
 	Issuer     string `mapstructure:"issuer"`
+}
+
+type Mq struct {
+	Host     string `mapstructure:"host"`
+	Username string    `mapstructure:"username"`
+	Password string `mapstructure:"password"`
+	Port     string `mapstructure:"port"`
 }
 
 type Log struct {

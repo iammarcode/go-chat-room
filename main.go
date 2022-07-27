@@ -1,13 +1,14 @@
 package main
 
 import (
-	"github.com/whoismarcode/go-chat-room/initializer"
+	"github.com/iammarcode/go-chat-room/initializer"
 )
 
 func main() {
-	initializer.Config("./")
-	initializer.Logging()
-	initializer.Mysql()
-	initializer.Redis()
-	initializer.Router()
+	initializer.InitConfig("./")
+	initializer.InitLogging()
+	initializer.InitMysql()
+	initializer.InitRedis()
+	initializer.InitMq()
+	initializer.InitRouter()
 }

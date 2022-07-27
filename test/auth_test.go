@@ -2,7 +2,7 @@ package test
 
 import (
 	"github.com/stretchr/testify/assert"
-	"github.com/whoismarcode/go-chat-room/initializer"
+	"github.com/iammarcode/go-chat-room/initializer"
 	"net/http"
 	"net/http/httptest"
 	"testing"

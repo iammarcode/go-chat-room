@@ -2,9 +2,9 @@ package jwt
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/whoismarcode/go-chat-room/pkg/logging"
-	"github.com/whoismarcode/go-chat-room/pkg/util"
-	"github.com/whoismarcode/go-chat-room/response"
+	"github.com/iammarcode/go-chat-room/pkg/logging"
+	"github.com/iammarcode/go-chat-room/pkg/util"
+	"github.com/iammarcode/go-chat-room/response"
 )
 
 func JwtAuth() gin.HandlerFunc {

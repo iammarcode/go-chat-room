@@ -2,8 +2,8 @@ package util
 
 import (
 	"github.com/golang-jwt/jwt"
-	"github.com/whoismarcode/go-chat-room/global"
-	"github.com/whoismarcode/go-chat-room/pkg/logging"
+	"github.com/iammarcode/go-chat-room/global"
+	"github.com/iammarcode/go-chat-room/pkg/logging"
 	"time"
 )
 

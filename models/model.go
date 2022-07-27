@@ -1,13 +1,15 @@
 package models
 
 import (
-	"github.com/whoismarcode/go-chat-room/pkg/logging"
-	"github.com/whoismarcode/go-chat-room/pkg/util"
+	"fmt"
+	"github.com/iammarcode/go-chat-room/global"
+	"github.com/iammarcode/go-chat-room/pkg/logging"
+	"github.com/iammarcode/go-chat-room/pkg/util"
 	"gorm.io/gorm"
 )
 
 type Model struct {
-	ID         int    `gorm:"primaryKey" json:"id"`
+	ID         int     `gorm:"primaryKey" json:"id"`
 	CreatedAt  *string `json:"created_at"`
 	ModifiedAt *string `json:"modified_at"`
 	DeletedAt  *string `json:"deleted_at"`
@@ -35,5 +37,35 @@ func (model *Model) BeforeUpdate(tx *gorm.DB) error {
 		logging.Error(err)
 		return err
 	}
+	return nil
+}
+
+func Create(table string, data map[string]interface{}) error {
+	model, exist := Mapper[table]
+	if !exist {
+		logging.Error("find label key err")
+		return gorm.ErrRecordNotFound
+	}
+	err := global.Db.Model(model).Create(data).Error
+	if err != nil {
+		logging.Error(fmt.Sprintf("create %s err: %v", table, err))
+		return err
+	}
+
+	return nil
+}
+
+func Update(table string, data map[string]interface{}) error {
+	model, exist := Mapper[table]
+	if !exist {
+		logging.Error("find label key err")
+		return gorm.ErrRecordNotFound
+	}
+	err := global.Db.Model(model).Updates(data).Error
+	if err != nil {
+		logging.Error(fmt.Sprintf("update %s err: %v", table, err))
+		return err
+	}
+
 	return nil
 }

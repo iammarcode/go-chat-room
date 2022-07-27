@@ -3,14 +3,14 @@ package initializer
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"github.com/whoismarcode/go-chat-room/api/v1"
-	"github.com/whoismarcode/go-chat-room/global"
-	"github.com/whoismarcode/go-chat-room/pkg/jwt"
+	"github.com/iammarcode/go-chat-room/api/v1"
+	"github.com/iammarcode/go-chat-room/global"
+	"github.com/iammarcode/go-chat-room/pkg/jwt"
 )
 
 var R *gin.Engine
 
-func Router() {
+func InitRouter() {
 	// Logging to a file.
 	//f, _ := os.Create("gin.log")
 	//gin.DefaultWriter = io.MultiWriter(f)

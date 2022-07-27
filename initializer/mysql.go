@@ -2,14 +2,15 @@ package initializer
 
 import (
 	"fmt"
-	"github.com/whoismarcode/go-chat-room/global"
-	"github.com/whoismarcode/go-chat-room/pkg/logging"
+	"github.com/iammarcode/go-chat-room/global"
+	"github.com/iammarcode/go-chat-room/pkg/logging"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
+	"gorm.io/gorm/schema"
 	"time"
 )
 
-func Mysql() {
+func InitMysql() {
 	// connection mysql
 	db, err := gorm.Open(mysql.New(mysql.Config{
 		DSN:                       fmt.Sprintf("%s:%s@tcp(%s)/%s?charset=utf8&parseTime=True&loc=Local", global.Config.Mysql.Username, global.Config.Mysql.Password, global.Config.Mysql.Host, global.Config.Mysql.DbName), // data source name
@@ -18,7 +19,11 @@ func Mysql() {
 		DontSupportRenameIndex:    true,  // drop & create when rename index, rename index not supported before MySQL 5.7, MariaDB
 		DontSupportRenameColumn:   true,  // `change` when rename column, rename column not supported before MySQL 8, MariaDB
 		SkipInitializeWithVersion: false, // auto configure based on currently MySQL version
-	}), &gorm.Config{})
+	}), &gorm.Config{
+		NamingStrategy: schema.NamingStrategy{
+			SingularTable: true,
+		},
+	})
 	if err != nil {
 		logging.Fatal("Mysql initializer gorm.Open() err: %v", err)
 	}

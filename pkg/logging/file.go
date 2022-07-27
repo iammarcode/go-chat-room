@@ -2,7 +2,7 @@ package logging
 
 import (
 	"fmt"
-	"github.com/whoismarcode/go-chat-room/global"
+	"github.com/iammarcode/go-chat-room/global"
 	"time"
 )
 

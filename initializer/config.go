@@ -3,10 +3,10 @@ package initializer
 import (
 	"fmt"
 	"github.com/spf13/viper"
-	"github.com/whoismarcode/go-chat-room/global"
+	"github.com/iammarcode/go-chat-room/global"
 )
 
-func Config(path string) {
+func InitConfig(path string) {
 	viper.AddConfigPath(path)
 	viper.SetConfigName("config")
 	viper.SetConfigType("yaml")

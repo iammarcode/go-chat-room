@@ -2,9 +2,10 @@ package service
 
 import (
 	"encoding/json"
-	"github.com/whoismarcode/go-chat-room/models"
-	"github.com/whoismarcode/go-chat-room/pkg/cache"
-	"github.com/whoismarcode/go-chat-room/pkg/logging"
+	"github.com/iammarcode/go-chat-room/models"
+	"github.com/iammarcode/go-chat-room/pkg/cache"
+	"github.com/iammarcode/go-chat-room/pkg/logging"
+	"github.com/iammarcode/go-chat-room/pkg/mq"
 )
 
 type UserService struct {
@@ -16,14 +17,22 @@ type UserService struct {
 }
 
 func (u UserService) Register() error {
-	user := models.User{
-		Username: u.Username,
-		Password: u.Password,
-		Email:    u.Email,
-		Avatar:   u.Avatar,
+	//user := models.User{
+	//	Username: u.Username,
+	//	Password: u.Password,
+	//	Email:    u.Email,
+	//	Avatar:   u.Avatar,
+	//}
+	if u.Avatar == "" {
+		u.Avatar = "default.png"
 	}
 
-	return user.Create()
+	err := mq.Pubulish(models.Message{"create", "user", map[string]interface{}{"username": u.Username, "password": u.Password, "avatar": u.Avatar, "email": u.Email}})
+	if err != nil {
+		logging.Error(err)
+	}
+
+	return err
 }
 
 func (u UserService) Update() error {

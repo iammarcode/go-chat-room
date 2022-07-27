@@ -3,10 +3,10 @@ package initializer
 import (
 	"fmt"
 	"github.com/go-redis/redis/v8"
-	"github.com/whoismarcode/go-chat-room/global"
+	"github.com/iammarcode/go-chat-room/global"
 )
 
-func Redis() {
+func InitRedis() {
 	// connection pool
 	rdb := redis.NewClient(&redis.Options{
 		Addr:     fmt.Sprintf("%s:%s", global.Config.Redis.Host, global.Config.Redis.Port),

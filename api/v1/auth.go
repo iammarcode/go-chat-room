@@ -3,10 +3,10 @@ package v1
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/gin-gonic/gin/binding"
-	"github.com/whoismarcode/go-chat-room/models"
-	"github.com/whoismarcode/go-chat-room/pkg/util"
-	"github.com/whoismarcode/go-chat-room/response"
-	"github.com/whoismarcode/go-chat-room/service"
+	"github.com/iammarcode/go-chat-room/models"
+	"github.com/iammarcode/go-chat-room/pkg/util"
+	"github.com/iammarcode/go-chat-room/response"
+	"github.com/iammarcode/go-chat-room/service"
 )
 
 func Login(c *gin.Context) {

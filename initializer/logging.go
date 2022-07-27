@@ -1,16 +1,16 @@
 package initializer
 
 import (
-	file2 "github.com/whoismarcode/go-chat-room/pkg/file"
-	"github.com/whoismarcode/go-chat-room/pkg/logging"
+	"github.com/iammarcode/go-chat-room/pkg/file"
+	"github.com/iammarcode/go-chat-room/pkg/logging"
 	"log"
 )
 
-func Logging() {
+func InitLogging() {
 	var err error
 	filePath := logging.GetLogFilePath()
 	fileName := logging.GetLogFileName()
-	logging.File, err = file2.MustOpen(fileName, filePath)
+	logging.File, err = file.MustOpen(fileName, filePath)
 	if err != nil {
 		log.Fatalf("Logging() err: %v", err)
 	}

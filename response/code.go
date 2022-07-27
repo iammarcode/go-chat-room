@@ -2,7 +2,7 @@ package response
 
 const (
 	SUCCESS        = 200
-	ERROR          = 500
+	ERROR          = 501
 	INVALID_PARAMS = 400
 
 	ERROR_AUTH_CHECK_TOKEN_FAIL    = 10001
